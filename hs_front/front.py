@@ -12,8 +12,8 @@ logging.basicConfig(filename=LOGNAME,level=logging.DEBUG, format='%(asctime)s %(
 
 app = Flask(__name__)
 
-COOKIE_NAME = '00198005090'
-COOKIE_PASS = 'homeservice'
+COOKIE_NAME = ''
+COOKIE_PASS = ''
 
 def authenticate():
     return Response(
@@ -24,7 +24,7 @@ def authenticate():
 
 # 사용자 이름 및 암호 목록
 users = {
-    "stevia06": "",
+    "": "",
 }
 
 def check_auth(username, password):
