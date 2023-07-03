@@ -45,7 +45,7 @@ CMY.start(0)
 CMG.start(0)
 
 url = 'http://apis.data.go.kr/B552584/ArpltnInforInqireSvc/getMsrstnAcctoRltmMesureDnsty'
-params ={'serviceKey' : 'SU22gp94yr2zl9bGoMXneYYmX3/OjGDsL8I3SILhRdKqcBTRZvFdg1lDXJkSZ3uX++R7IF2M/xJff6zn6PwkTQ==', 'returnType' : 'json', 'numOfRows' : '100', 'pageNo' : '1', 'stationName' : '광교동', 'dataTerm' : 'DAILY', 'ver' : '1.0' }
+params ={'serviceKey' : '', 'returnType' : 'json', 'numOfRows' : '100', 'pageNo' : '1', 'stationName' : '광교동', 'dataTerm' : 'DAILY', 'ver' : '1.0' }
                 
 # '2023042018'
 # (낮음) 0, (보통) 1, (높음) 2, (매우높음) 3
@@ -147,7 +147,7 @@ if __name__ == '__main__':
                 print("ALLERGY")
                 url2 = 'https://apis.data.go.kr/1360000/HealthWthrIdxServiceV3/getOakPollenRiskIdxV3'
                 yesterday = (datetime.now() - timedelta(days=1)).strftime("%Y%m%d18")
-                params2 = {'serviceKey':'SU22gp94yr2zl9bGoMXneYYmX3/OjGDsL8I3SILhRdKqcBTRZvFdg1lDXJkSZ3uX++R7IF2M/xJff6zn6PwkTQ==','numOfRows':'10','pageNo':'1','dataType':'json','areaNo':'4146557000','time': yesterday }
+                params2 = {'serviceKey':'','numOfRows':'10','pageNo':'1','dataType':'json','areaNo':'4146557000','time': yesterday }
                 #print(params2)
                 response2 = requests.get(url2, params=params2)
                 
