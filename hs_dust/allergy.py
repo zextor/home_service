@@ -16,7 +16,7 @@ def Check():
                 # '2023042018'
                 # (낮음) 0, (보통) 1, (높음) 2, (매우높음) 3
                 url = 'https://apis.data.go.kr/1360000/HealthWthrIdxServiceV3/getOakPollenRiskIdxV3'
-                params = {'serviceKey':'SU22gp94yr2zl9bGoMXneYYmX3/OjGDsL8I3SILhRdKqcBTRZvFdg1lDXJkSZ3uX++R7IF2M/xJff6zn6PwkTQ==','numOfRows':'10','pageNo':'1','dataType':'json','areaNo':'4146557000','time': yesterday }
+                params = {'serviceKey':'','numOfRows':'10','pageNo':'1','dataType':'json','areaNo':'4146557000','time': yesterday }
 
                 response = requests.get(url, params=params)
                 if response.status_code == 200:
