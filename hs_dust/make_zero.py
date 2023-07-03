@@ -22,7 +22,7 @@ GPIO.setup(CHO_YELLOW,GPIO.OUT)
 GPIO.setup(CHO_GREEN,GPIO.OUT)
 
 url = 'http://apis.data.go.kr/B552584/ArpltnInforInqireSvc/getMsrstnAcctoRltmMesureDnsty'
-params ={'serviceKey' : 'SU22gp94yr2zl9bGoMXneYYmX3/OjGDsL8I3SILhRdKqcBTRZvFdg1lDXJkSZ3uX++R7IF2M/xJff6zn6PwkTQ==', 'returnType' : 'json', 'numOfRows' : '100', 'pageNo' : '1', 'stationName' : '광교동', 'dataTerm' : 'DAILY', 'ver' : '1.0' }
+params ={'serviceKey' : '', 'returnType' : 'json', 'numOfRows' : '100', 'pageNo' : '1', 'stationName' : '광교동', 'dataTerm' : 'DAILY', 'ver' : '1.0' }
 
 # 공공 데이터 포털, 카카오로그인
 # https://www.data.go.kr/iim/dor/selectMyOfferReqstList.do
