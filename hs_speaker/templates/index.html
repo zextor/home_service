@@ -1,0 +1,18 @@
+<!doctype html>
+<html>
+<head>
+    <title>Flask Example</title>
+</head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<style>
+        body {
+            font-size: 2em;
+        }
+    </style>
+<body>
+    <form style="width:100%; height: 40px;" method="POST" action="{{ url_for('result') }}" >
+        <input style="font-size: 30px; width: 70%;" type="text" name="text" autofocus>
+        <input style="font-size: 30px; width: 20%;" type="submit" value="확인" >
+    </form>
+</body>
+</html>

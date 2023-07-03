@@ -1,0 +1,64 @@
+<!doctype html>
+<html>
+  <head>
+    <title>CCTV</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <style>
+	  h1 { color: gold; }
+    </style>
+
+  </head>
+  <body style="background-color: black">
+    <h1 id="cpu-temp">CPU: {{ cpu_temp }} &deg;C</h1>
+	<table width="100%" border="1">
+	<tr><td>
+    <div id="video-container">
+      <img src="{{ url_for('video_feed') }}" width="100%">
+    </div>
+	</td></tr>
+	</table>
+
+	<span style="font-size: 35px;color: red;" id="times"></span>
+
+	<div style="display: flex; justify-content: space-between;">
+	  <form method="POST" action="/close_stream">
+		<button style="font-size: 24px;">Temp</button>
+	  </form>
+	  <button style="font-size: 24px;" onclick="stop_video()">CLOSE</button>
+	</div>
+
+	<script>
+		function stop_video() {
+			fetch('/close_stream');
+		}
+
+		window.addEventListener('unload', function() {
+			fetch('/close_stream');
+			var xhr = new XMLHttpRequest();
+			xhr.open('GET', '/close_stream');
+			xhr.send();
+		});
+	</script>
+
+
+  </body>
+  <script>
+	setInterval(function() {
+		fetch('/get_cpu_temp')
+			.then(response => response.text())
+			.then(data => {
+				document.getElementById('cpu-temp').innerHTML = `CPU: ${data} &deg;C`;
+			});
+	}, 5000);
+
+
+	setInterval(function() {
+		fetch('/times')
+			.then(response => response.text())
+			.then(data => {
+				document.getElementById('times').innerHTML = `${data}`;
+			});
+	}, 250);
+  </script>
+</html>
